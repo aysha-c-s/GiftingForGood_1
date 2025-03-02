@@ -1,0 +1,97 @@
+﻿* {
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+/* .container{
+     min-height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding:20px;
+     padding-bottom: 60px;
+  }
+  
+  .container .content{
+     text-align: center;
+  } */
+
+/* .container .content h3 span{
+    background: crimson;
+    color:#fff;
+    border-radius: 5px;
+    padding:0 15px;
+ }
+ 
+ .container .content .btn{
+    display: inline-block;
+    padding:10px 30px;
+    font-size: 20px;
+    background: #333;
+    color:#fff;
+    margin:0 5px;
+ }
+ 
+ .container .content .btn:hover{
+    background: crimson;
+ } */
+.form-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 60px;
+}
+
+    .form-container form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px rgba(0,0,0,.1);
+        text-align: center;
+        width: 500px;
+    }
+
+        .form-container form input {
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 17px;
+            margin: 8px 0;
+            background: #eee;
+            border-radius: 5px;
+        }
+
+        .form-container form .form-btn {
+            background: #D6BFC3;
+            color: #4D0B17;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+            .form-container form .form-btn:hover {
+                background: #4D0B17;
+                color: #fff;
+            }
+
+        .form-container form p {
+            margin-top: 10px;
+            font-size: 20px;
+            color: #333;
+        }
+
+            .form-container form p a {
+                color: crimson;
+            }
+
+        .form-container form .error-msg {
+            margin: 10px 0;
+            display: block;
+            background: crimson;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 20px;
+            padding: 10px;
+        }

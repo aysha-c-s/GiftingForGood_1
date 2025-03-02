@@ -1,0 +1,122 @@
+﻿@model IEnumerable<GFG1.Models.Post>
+@{
+    ViewData["Title"] = "Home";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="userhome.css">
+    <title>Gifting For Good Dashboard</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="~/images/logo.png" alt="GFG Logo" width="50" height="45">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Posts" asp-action="MyPosts">My Posts</a>
+                </li>
+                <form class="form-inline mx-auto" method="get">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search" value="@Context.Request.Query["search"]">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </ul>
+            @*<ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <p><b>Full Name:</b> @ViewBag.Name</p>
+                        <p><b>Email:</b> @ViewBag.Email</p>
+                        <p><b>Phone:</b> @ViewBag.Phone</p>
+                        <p><b>Optional Phone:</b> @ViewBag.OptionalPhone</p>
+                        <p><b>Address:</b> @ViewBag.Address</p>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" asp-controller="Account" asp-action="Profile">Edit Profile</a>
+                        <a class="dropdown-item" asp-controller="Account" asp-action="Logout">Logout</a>
+                    </div>
+                </li>
+            </ul> *@
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-md-2">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#">About Us</a></li>
+                    <li class="list-group-item"><a href="#">Contact Us</a></li>
+                    <li class="list-group-item"><a href="#">FAQs</a></li>
+                    <li class="list-group-item"><a href="#">Credits</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-7">
+                <button class="btn btn-primary" onclick="location.href='@Url.Action("Create", "Post")'">+ Create New Post</button>
+                <div class="mt-3">
+                    @if (!Model.Any())
+                    {
+                        <div class="text-center">
+                            <h3 style="color:grey">No posts available</h3>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="row">
+                            @foreach (var post in Model)
+                            {
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="card mb-4 shadow">
+                                        <img src="~/img/@post.Photo" height="300" class="card-img-top" />
+                                        <div class="card-body">
+                                            <h5 class="card-title"><strong>@post.User.Username</strong></h5>
+                                            
+                                            <p class="card-text">@post.ShortDescription</p>
+                                            <a class="btn btn-outline-primary" asp-controller="Posts" asp-action="Details" asp-route-id="@post.Id">See Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+
+            @* <div class="col-md-3">
+                <h4>Emergency Notice Board</h4>
+                @if (ViewBag.Notices != null && ViewBag.Notices.Count > 0)
+                {
+                    @foreach (var notice in ViewBag.Notices)
+                    {
+                        <div class="alert alert-warning">
+                            <p><strong>Location:</strong> @notice.Location</p>
+                            <p><strong>Description:</strong> @notice.Description</p>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No emergency notices at the moment</p>
+                }
+            </div> *@
+        </div>
+    </div>
+</body>

@@ -1,0 +1,506 @@
+﻿@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f5f5f5;
+    margin-top: 60px;
+}
+
+.link {
+    color: inherit;
+    i
+
+{
+    margin-right: 2%;
+    width: 11%;
+    background-color: var(--secondary);
+    color: var(--white);
+    line-height: 250%;
+    text-align: center;
+    border-radius: 50%;
+}
+
+}
+
+
+#navbarNav {
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: center; /* Center the navbar content */
+    align-items: center; /* Align items vertically */
+    width: 100%; /* Ensure it takes full width */
+}
+
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    padding-left: 7.8vw;
+    padding-right: 7.8vw;
+}
+
+    .navbar .logo {
+        width: 90px;
+        height: auto;
+    }
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: #535353 !important;
+    margin: 0 15px;
+    font-weight: 500; /* Increase font weight slightly */
+    font-size: 150%;
+}
+
+    .nav-link:hover {
+        color: crimson !important;
+    }
+
+.form-inline {
+    margin: 0 15px;
+}
+
+.nav-item:last-child {
+    margin-left: 80%;
+}
+
+.navbar .fa-user-circle {
+    margin-left: 80%;
+}
+
+.custom-search-button {
+    border-color: #535353; /* Bootstrap success border color */
+    color: #535353; /* Bootstrap success text color */
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+    .custom-search-button:hover {
+        background-color: crimson; /* Crimson background on hover */
+        border-color: crimson; /* Crimson border on hover */
+        color: #ffffff; /* White text on hover */
+    }
+
+.left-section {
+    background-color: #f0e3e3; /* Very light background color */
+    padding: 20px;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+}
+
+    .left-section .list-group-item {
+        border: none;
+        background-color: transparent;
+        font-size: 20px; /* Slightly larger font size */
+        font-weight: 500; /* Slightly increased font weight */
+        padding: 30px 30px; /* Adjusted padding for more space */
+        transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transition effect */
+    }
+
+        .left-section .list-group-item a {
+            color: #535353;
+            text-decoration: none;
+            display: block; /* Make the whole item clickable */
+            transition: color 0.3s; /* Smooth transition for text color */
+        }
+
+        .left-section .list-group-item:hover {
+            background-color: crimson; /* Crimson background on hover */
+            color: #ffffff; /* White text on hover */
+            transform: translateX(5px); /* Slight moving effect on hover */
+        }
+
+            .left-section .list-group-item:hover a {
+                color: #ffffff; /* Ensure text stays white on hover */
+            }
+
+        .left-section .list-group-item a:hover {
+            text-decoration: none; /* Remove underline on hover */
+        }
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px; /* Maximum width of the modal for smaller screens */
+    max-height: 50%; /* Maximum height of the modal relative to viewport height */
+    overflow-y: auto; /* Enable scrolling if content exceeds modal height */
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none; /* Remove border */
+}
+
+.modal-content {
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+    .close:hover {
+        color: black;
+    }
+
+/* Modal Overlay styles */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 900; /* Sit behind the modal */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    backdrop-filter: blur(10px); /* Blur effect */
+}
+
+/* About Modal Specific Styles */
+.about-modal {
+    width: 70%; /* Width suitable for the content */
+    max-width: 900px; /* Maximum width for larger screens */
+    max-height: 50%; /* Maximum height for the modal */
+    overflow-y: auto; /* Enable scrolling if content exceeds modal height */
+    background-color: #fff; /* White background for clarity */
+    padding: 30px; /* Extra padding for content spacing */
+    border-radius: 15px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    font-family: 'Open Sans', sans-serif; /* Consistent font family */
+    color: #333; /* Dark text for readability */
+}
+
+    .about-modal h2 {
+        font-size: 2em; /* Larger font size for the heading */
+        margin-bottom: 15px; /* Space below the heading */
+        color: crimson; /* Primary color for heading */
+        border-bottom: 2px solid crimson; /* Underline heading */
+        padding-bottom: 10px; /* Padding for heading underline */
+    }
+
+    .about-modal p {
+        font-size: 1.2em; /* Slightly larger font size for text */
+        line-height: 1.6; /* Line height for readability */
+        margin-bottom: 20px; /* Space between paragraphs */
+    }
+
+/* Contact Modal Specific Styles */
+.contact-modal {
+    width: 50%; /* Width suitable for the content */
+    max-width: 500px; /* Maximum width for larger screens */
+    max-height: 30%; /* Maximum height for the modal */
+    overflow-y: auto; /* Enable scrolling if content exceeds modal height */
+    background-color: #fff; /* White background for clarity */
+    padding: 20px; /* Extra padding for content spacing */
+    border-radius: 15px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    font-family: 'Open Sans', sans-serif; /* Consistent font family */
+    color: #333; /* Dark text for readability */
+}
+
+    .contact-modal .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Increased gap between icons */
+        margin-bottom: 20px; /* Increased margin bottom for spacing */
+    }
+
+        .contact-modal .social-icons i {
+            font-size: 30px; /* Increased icon size */
+            color: crimson; /* Primary icon color */
+            transition: color 0.3s;
+        }
+
+            .contact-modal .social-icons i:hover {
+                color: #ff6f61; /* Lighter hover color for icons */
+            }
+
+    .contact-modal .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* Increased gap between contact items */
+    }
+
+        .contact-modal .contact-info i {
+            font-size: 20px; /* Icon size */
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .contact-modal .contact-info .contact-item {
+            display: flex;
+            align-items: center;
+            font-size: 1.1em;
+        }
+
+            .contact-modal .contact-info .contact-item span {
+                font-weight: bold;
+            }
+
+
+/* FAQ Modal Specific Styles */
+.faqs-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust width as needed */
+    max-width: 700px; /* Maximum width for larger screens */
+    max-height: 70%; /* Maximum height for the modal */
+    overflow-y: auto; /* Enable scrolling if content exceeds modal height */
+    background-color: #fff; /* White background for clarity */
+    padding: 30px; /* Extra padding for content spacing */
+    border-radius: 15px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    font-family: 'Open Sans', sans-serif; /* Consistent font family */
+    color: #333; /* Dark text for readability */
+}
+
+    .faqs-modal h2 {
+        font-size: 2em; /* Larger font size for the heading */
+        margin-bottom: 15px; /* Space below the heading */
+        color: crimson; /* Primary color for heading */
+        border-bottom: 2px solid crimson; /* Underline heading */
+        padding-bottom: 10px; /* Padding for heading underline */
+    }
+
+    .faqs-modal p {
+        font-size: 1.2em; /* Slightly larger font size for text */
+        line-height: 1.6; /* Line height for readability */
+        margin-bottom: 20px; /* Space between paragraphs */
+    }
+
+
+.credits-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px; /* Maximum width for smaller screens */
+    max-height: 45%; /* Maximum height for the modal relative to viewport height */
+    overflow-y: auto; /* Enable scrolling if content exceeds modal height */
+    background-color: #fefefe; /* Light background color */
+    padding: 20px; /* Padding inside the modal */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    font-family: 'Open Sans', sans-serif; /* Font family */
+    color: #333; /* Text color */
+}
+
+    .credits-modal .modal-content {
+        text-align: center; /* Center align modal content */
+    }
+
+    .credits-modal h2 {
+        font-size: 1.5em; /* Larger font size for heading */
+        margin-bottom: 20px; /* Space below the heading */
+        color: crimson; /* Primary color for heading */
+        padding-bottom: 25px;
+        font-weight: bold;
+    }
+
+    .credits-modal .credits-section {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .credits-modal .profile-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+        .credits-modal .profile-icon img {
+            width: 80px; /* Adjust size of the profile icon */
+            height: 80px; /* Adjust size of the profile icon */
+            border-radius: 50%; /* Circular shape for profile icon */
+            margin-bottom: 20px; /* Space below the profile icon */
+            object-fit: cover; /* Cover the container, maintaining aspect ratio */
+            object-position: center;
+        }
+
+    .credits-modal .profile-name {
+        font-size: 1.2em; /* Font size for the name */
+        font-weight: bold; /* Bold font weight for emphasis */
+    }
+
+.center-section {
+    Padding: 10px;
+    background-color: #ffffff;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.cp-button {
+    display: block;
+    width: 100%;
+}
+
+.posts {
+    margin-top: 15px;
+}
+
+.card {
+    height: 65vh;
+}
+
+.d-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+}
+
+
+
+
+/*
+.posts_old {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+
+.post {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.post-description {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+.claim-btn {
+    width: 100%;
+}
+
+.claim-btn.claimed {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    cursor: not-allowed;
+}
+
+*/
+
+.right-section {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+    .right-section h4 {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+.emergency-notice {
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: linear-gradient(90deg, yellow, red);
+    animation: colorChange 5s infinite;
+}
+
+    .emergency-notice p {
+        margin: 0;
+    }
+
+@keyframes colorChange {
+    0% {
+        background: yellow;
+    }
+
+    50% {
+        background: red;
+    }
+
+    100% {
+        background: yellow;
+    }
+}
+
+#toggleButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+    #toggleButton .fas {
+        color: white;
+        font-size: 24px;
+    }
+
+#toggleBox {
+    display: none;
+    width: 400px;
+    background-color: white;
+    transition: all 0.3s ease;
+    top: 50px;
+    right: 0;
+    z-index: 1;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+#toggleCheckbox:checked + label + #toggleBox {
+    display: block;
+}
+
+#toggleBox p {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid gainsboro;
+}
+
+    #toggleBox p:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    #toggleBox p span {
+        float: right;
+        font-weight: normal;
+    }

@@ -1,0 +1,30 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="~/css/login.css">
+</head>
+<body style="background: url(/images/background.jpg);background-repeat:no-repeat;background-size:100%">
+    <div class="form-container">
+        <form method="post" asp-action="Register" asp-controller="Account">
+            <h1>REGISTER</h1>
+            @if (ViewBag.Error != null)
+            {
+                <span class="error-msg">@ViewBag.Error</span>
+            }
+            <input type="text" name="Username" required placeholder="Enter your username">
+            <input type="email" name="Email" required placeholder="Enter your email">
+            <input type="text" name="Address" required placeholder="Enter your address">
+            <input type="text" name="Phone" required placeholder="Enter your phone number">
+            <input type="text" name="OptionalPhone" placeholder="Enter your optional phone number">
+            <input type="password" name="Password" required placeholder="Enter your password">
+            <input type="password" name="ConfirmPassword" required placeholder="Confirm your password">
+            <input type="submit" value="Register Now" class="form-btn">
+            <p>Already have an account? <a asp-action="Login" asp-controller="Account">Login</a></p>
+        </form>
+    </div>
+</body>
+</html>

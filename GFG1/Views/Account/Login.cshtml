@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="~/css/login.css">
+</head>
+<body style="background: url(/images/background.jpg);background-repeat:no-repeat;background-size:100%">
+    <div class="form-container">
+        <form method="post" asp-action="Login" asp-controller="Account">
+            <h1>LOGIN</h1>
+            @if (ViewBag.Error != null)
+            {
+                <span class="error-msg">@ViewBag.Error</span>
+            }
+            <input type="text" name="name" required placeholder="Enter your username or email">
+            <input type="password" name="password" required placeholder="Enter your password">
+            <input type="submit" value="Login Now" class="form-btn">
+            <p>Don't have an account? <a asp-action="Register" asp-controller="Account">Register</a></p>
+        </form>
+    </div>
+</body>
+</html>

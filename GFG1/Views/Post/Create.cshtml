@@ -1,0 +1,92 @@
+﻿@model GFG1.Models.Post
+@{
+    ViewData["Title"] = "Create Post";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="~/css/CreatePost.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="post">
+        <section class="post" id="post">
+            <div class="container">
+                <div class="main-text">
+                    <h2>@User.Identity.Name</h2><br><br>
+                    <h2 style="color:#dbd0ca;">Please enter details of the donation...</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 py-3 py-md-0">
+                        <form asp-action="CreatePost" asp-controller="Post" method="post" enctype="multipart/form-data">
+                            <select class="form-control" asp-for="Area" required>
+                                <option selected class="selected">Choose Your Area</option>
+                                <option value="Dhanmondi">Dhanmondi</option>
+                                <option value="Mirpur">Mirpur</option>
+                                <option value="Gulshan">Gulshan</option>
+                                <option value="Banani">Banani</option>
+                                <option value="Badda">Badda</option>
+                                <option value="Jatrabari">Jatrabari</option>
+                                <option value="Khilgaon">Khilgaon</option>
+                                <option value="Tejgaon">Tejgaon</option>
+                                <option value="Uttara">Uttara</option>
+                            </select><br>
+
+                            <input type="text" class="form-control" asp-for="FullAddress" placeholder="Full address" required><br>
+
+                            <select class="form-control" asp-for="Type" required>
+                                <option selected class="selected">Type of food</option>
+                                <option value="Fruits/Veggies">Fruits/Veggies</option>
+                                <option value="Grains/legumes">Grains/legumes</option>
+                                <option value="Meat/poultry/Eggs">Meat/poultry/Eggs</option>
+                                <option value="Fish/seafood">Fish/seafood</option>
+                                <option value="Dairy foods">Dairy foods</option>
+                                @* <option value=-"Rice/Curry">Rice/Curry</option> *@
+                                <option value="Baked goods">Baked goods</option>
+                            </select><br>
+
+                            <input type="text" class="form-control" asp-for="Amount" placeholder="Amount" required><br>
+                            <input type="date" class="form-control" asp-for="ExpireDate" required><br>
+
+                            <h6 style="color:#dbd0ca">Upload an image</h6>
+                            <input type="file" class="form-control" asp-for="Photo" accept=".jpg, .jpeg, .png"><br>
+
+                            <textarea class="formcontrol" asp-for="ShortDescription" rows="5" placeholder="Short description"></textarea><br>
+
+                            <input type="submit" value="Create post" class="submit" required>
+                        </form>
+                    </div>
+
+                    <div class="col-md-6 py-3 py-md-0">
+                        <div class="card" id="selectedBanner">
+                            <img id="previewImage" src="~/images/books.png" alt="Preview Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#ImageFile").on("change", function (e) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $("#previewImage").attr("src", e.target.result);
+                };
+                reader.readAsDataURL(e.target.files[0]);
+            });
+        });
+    </script>
+
+</body>
+</html>
